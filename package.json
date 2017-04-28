@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mljs/ml-regression-simple-linear.git"
+    "url": "git+https://github.com/mljs/regression-simple-linear.git"
   },
   "keywords": [],
   "author": "Michaël Zasso",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mljs/ml-regression-simple-linear/issues"
+    "url": "https://github.com/mljs/regression-simple-linear/issues"
   },
-  "homepage": "https://github.com/mljs/ml-regression-simple-linear#readme",
+  "homepage": "https://github.com/mljs/regression-simple-linear#readme",
   "jest": {
     "testEnvironment": "node"
   },

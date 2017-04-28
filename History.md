@@ -4,7 +4,7 @@
 
 ### Features
 
-* implement simple linear regression ([3af9b7d](https://github.com/mljs/ml-regression-simple-linear/commit/3af9b7d))
+* implement simple linear regression ([3af9b7d](https://github.com/mljs/regression-simple-linear/commit/3af9b7d))
 
 
 
