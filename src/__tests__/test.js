@@ -87,7 +87,7 @@ describe('Simple Linear Regression', () => {
         const outputs = [0, 1];
         expect(() => {
             new SLR(inputs, outputs);
-        }).toThrow(/input and output array have a different length/);
+        }).toThrow(/x and y arrays must have the same length/);
     });
 
     it('Load and export model', () => {

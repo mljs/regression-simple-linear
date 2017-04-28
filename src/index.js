@@ -1,4 +1,4 @@
-import BaseRegression, {maybeToPrecision} from 'ml-regression-base';
+import BaseRegression, {checkArrayLength, maybeToPrecision} from 'ml-regression-base';
 
 export default class SimpleLinearRegression extends BaseRegression {
     constructor(x, y) {
@@ -8,12 +8,8 @@ export default class SimpleLinearRegression extends BaseRegression {
             this.intercept = y.intercept;
             this.coefficients = [y.intercept, y.slope];
         } else {
-            const n = x.length;
-            if (n !== y.length) {
-                throw new RangeError('input and output array have a different length');
-            }
-
-            regress(this, x, y, n);
+            checkArrayLength(x, y);
+            regress(this, x, y);
         }
     }
 
@@ -61,7 +57,8 @@ export default class SimpleLinearRegression extends BaseRegression {
     }
 }
 
-function regress(slr, x, y, n) {
+function regress(slr, x, y) {
+    const n = x.length;
     let xSum = 0;
     let ySum = 0;
 

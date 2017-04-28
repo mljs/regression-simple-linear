@@ -1814,8 +1814,8 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
     minimist "0.0.8"
 
 ml-regression-base@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ml-regression-base/-/ml-regression-base-1.1.0.tgz#876612bcf813c8b8762f6b68eb6b04025c122200"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ml-regression-base/-/ml-regression-base-1.2.0.tgz#e8c58c12b649d845ecb13e0c246ad1be6e57cc1c"
 
 ms@0.7.3:
   version "0.7.3"
