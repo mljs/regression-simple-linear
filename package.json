@@ -1,6 +1,6 @@
 {
   "name": "ml-regression-simple-linear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Linear Regression",
   "main": "lib/index.js",
   "module": "src/index.js",
