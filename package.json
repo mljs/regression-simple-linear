@@ -3,15 +3,13 @@
   "version": "1.0.2",
   "description": "Simple Linear Regression",
   "main": "lib/index.js",
-  "module": "src/index.js",
   "files": [
-    "lib",
-    "src"
+    "lib"
   ],
   "scripts": {
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
-    "prepublish": "rollup -c",
+    "prepare": "rollup -c",
     "test": "run-s testonly eslint",
     "testonly": "jest"
   },
@@ -30,14 +28,15 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "babel-jest": "^19.0.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
     "eslint": "^3.19.0",
     "eslint-config-cheminfo": "^1.7.0",
     "eslint-plugin-no-only-tests": "^1.1.0",
     "jest": "^19.0.2",
     "npm-run-all": "^4.0.2",
-    "rollup": "^0.41.6"
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2"
   },
   "dependencies": {
     "ml-regression-base": "^1.0.0"
