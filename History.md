@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/mljs/regression-simple-linear/compare/v1.0.2...v2.0.0) (2019-04-30)
+
+
+### chore
+
+* update dependencies ([aea8acc](https://github.com/mljs/regression-simple-linear/commit/aea8acc))
+
+
+### BREAKING CHANGES
+
+* Support for Node.js 6 was removed.
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/mljs/regression-simple-linear/compare/v1.0.1...v1.0.2) (2017-04-28)
 
