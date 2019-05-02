@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/mljs/regression-simple-linear/compare/v2.0.0...v2.0.1) (2019-05-02)
+
+
+### Bug Fixes
+
+* **ts:** fix typo in TS definitions ([d5caf10](https://github.com/mljs/regression-simple-linear/commit/d5caf10))
+
+
+
 # [2.0.0](https://github.com/mljs/regression-simple-linear/compare/v1.0.2...v2.0.0) (2019-04-30)
 
 
