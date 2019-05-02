@@ -1,6 +1,6 @@
 import BaseRegression from 'ml-regression-base';
 
-declare module 'ml-regression-simple-linea' {
+declare module 'ml-regression-simple-linear' {
   export interface SLRModel {
     name: 'simpleLinearRegression';
   }
