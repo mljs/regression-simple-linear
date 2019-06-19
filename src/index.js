@@ -37,7 +37,7 @@ export default class SimpleLinearRegression extends BaseRegression {
     if (this.slope !== 0) {
       const xFactor = maybeToPrecision(this.slope, precision);
       result += `${xFactor === '1' ? '' : `${xFactor} * `}x`;
-      if (this.intercept) {
+      if (this.intercept !== 0) {
         const absIntercept = Math.abs(this.intercept);
         const operator = absIntercept === this.intercept ? '+' : '-';
         result += ` ${operator} ${maybeToPrecision(absIntercept, precision)}`;

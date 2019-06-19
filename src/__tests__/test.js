@@ -7,17 +7,17 @@ describe('Simple Linear Regression', () => {
 
     const regression = new SLR(inputs, outputs);
 
-    expect(regression.slope).toStrictEqual(regression.coefficients[1]);
-    expect(regression.intercept).toStrictEqual(regression.coefficients[0]);
+    expect(regression.slope).toBe(regression.coefficients[1]);
+    expect(regression.intercept).toBe(regression.coefficients[0]);
 
     expect(regression.slope).toBeCloseTo(-0.264706, 1e-5);
     expect(regression.intercept).toBeCloseTo(50.588235, 1e-5);
 
     const y = regression.predict(85);
-    expect(regression.computeX(y)).toStrictEqual(85);
+    expect(regression.computeX(y)).toBe(85);
     expect(y).toBeCloseTo(28.088235294117649, 1e-10);
 
-    expect(regression.toString(3)).toStrictEqual('f(x) = - 0.265 * x + 50.6');
+    expect(regression.toString(3)).toBe('f(x) = - 0.265 * x + 50.6');
   });
 
   it('SLR2', () => {
@@ -64,7 +64,7 @@ describe('Simple Linear Regression', () => {
 
     const score = regression.score(inputs, outputs);
     expect(score.r).toBeCloseTo(0.9945, 1e-4);
-    expect(score.r2).toStrictEqual(score.r * score.r);
+    expect(score.r2).toBe(score.r * score.r);
     expect(score.chi2).toBeLessThan(1);
     expect(score.rmsd).toBeLessThan(1);
   });
@@ -75,22 +75,22 @@ describe('Simple Linear Regression', () => {
 
     const regression = new SLR(inputs, outputs);
 
-    expect(regression.slope).toStrictEqual(-2);
-    expect(regression.intercept).toStrictEqual(10);
-    expect(regression.predict(6)).toStrictEqual(-2);
-    expect(regression.predict(-1)).toStrictEqual(12);
-    expect(regression.predict(2.5)).toStrictEqual(5);
-    expect(regression.computeX(5)).toStrictEqual(2.5);
-    expect(regression.computeX(9)).toStrictEqual(0.5);
-    expect(regression.computeX(-12)).toStrictEqual(11);
+    expect(regression.slope).toBe(-2);
+    expect(regression.intercept).toBe(10);
+    expect(regression.predict(6)).toBe(-2);
+    expect(regression.predict(-1)).toBe(12);
+    expect(regression.predict(2.5)).toBe(5);
+    expect(regression.computeX(5)).toBe(2.5);
+    expect(regression.computeX(9)).toBe(0.5);
+    expect(regression.computeX(-12)).toBe(11);
 
     const score = regression.score(inputs, outputs);
     expect(score.r).toBeGreaterThan(0);
-    expect(score.r2).toStrictEqual(1);
-    expect(score.chi2).toStrictEqual(0);
-    expect(score.rmsd).toStrictEqual(0);
+    expect(score.r2).toBe(1);
+    expect(score.chi2).toBe(0);
+    expect(score.rmsd).toBe(0);
 
-    expect(regression.toString(3)).toStrictEqual('f(x) = - 2.00 * x + 10.0');
+    expect(regression.toString(3)).toBe('f(x) = - 2.00 * x + 10.0');
   });
 
   it('SLR constant', () => {
@@ -98,11 +98,10 @@ describe('Simple Linear Regression', () => {
     const outputs = [2, 2, 2, 2];
 
     const regression = new SLR(inputs, outputs);
-
-    expect(regression.toLaTeX()).toStrictEqual('f(x) = 2');
-    expect(regression.toString()).toStrictEqual('f(x) = 2');
-    expect(regression.toString(1)).toStrictEqual('f(x) = 2');
-    expect(regression.toString(5)).toStrictEqual('f(x) = 2.0000');
+    expect(regression.toLaTeX()).toBe('f(x) = 2');
+    expect(regression.toString()).toBe('f(x) = 2');
+    expect(regression.toString(1)).toBe('f(x) = 2');
+    expect(regression.toString(5)).toBe('f(x) = 2.0000');
   });
 
   it('negative intercept and slope', () => {
@@ -111,7 +110,14 @@ describe('Simple Linear Regression', () => {
 
     const regression = new SLR(inputs, outputs);
 
-    expect(regression.toString()).toStrictEqual('f(x) = x - 1');
+    expect(regression.toString()).toBe('f(x) = x - 1');
+  });
+
+  it('intercept = 0', () => {
+    const regression = new SLR([0, 1, 2], [0, 1, 2]);
+    expect(regression.slope).toBe(1);
+    expect(regression.intercept).toBe(0);
+    expect(regression.toString()).toBe('f(x) = x');
   });
 
   it('different size on input and output', () => {
@@ -128,13 +134,17 @@ describe('Simple Linear Regression', () => {
       slope: 1,
       intercept: 1
     });
-    expect(regression.slope).toStrictEqual(1);
-    expect(regression.intercept).toStrictEqual(1);
+    expect(regression.slope).toBe(1);
+    expect(regression.intercept).toBe(1);
     expect(regression.coefficients).toStrictEqual([1, 1]);
 
     const model = regression.toJSON();
-    expect(model.name).toStrictEqual('simpleLinearRegression');
-    expect(model.slope).toStrictEqual(1);
-    expect(model.intercept).toStrictEqual(1);
+    expect(model.name).toBe('simpleLinearRegression');
+    expect(model.slope).toBe(1);
+    expect(model.intercept).toBe(1);
+  });
+
+  it('wrong model', () => {
+    expect(() => SLR.load({})).toThrow(/^not a SLR model$/);
   });
 });
