@@ -5,7 +5,7 @@ declare module 'ml-regression-simple-linear' {
     name: 'simpleLinearRegression';
   }
 
-  class SimpleLinearRegression extends BaseRegression {
+  export default class SimpleLinearRegression extends BaseRegression {
     slope: number;
     intercept: number;
     coefficients: [number, number];
@@ -17,6 +17,4 @@ declare module 'ml-regression-simple-linear' {
     computeX(y: number): number;
     toJSON(): SLRModel;
   }
-
-  export = SimpleLinearRegression;
 }
