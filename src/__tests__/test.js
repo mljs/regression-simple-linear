@@ -37,7 +37,7 @@ describe('Simple Linear Regression', () => {
       1.75,
       1.78,
       1.8,
-      1.83
+      1.83,
     ];
     const outputs = [
       52.21,
@@ -54,7 +54,7 @@ describe('Simple Linear Regression', () => {
       68.1,
       69.92,
       72.19,
-      74.46
+      74.46,
     ];
 
     const regression = new SLR(inputs, outputs);
@@ -124,7 +124,7 @@ describe('Simple Linear Regression', () => {
     const inputs = [0, 1, 2];
     const outputs = [0, 1];
     expect(() => new SLR(inputs, outputs)).toThrow(
-      /x and y arrays must have the same length/
+      /x and y arrays must have the same length/,
     );
   });
 
@@ -132,7 +132,7 @@ describe('Simple Linear Regression', () => {
     const regression = SLR.load({
       name: 'simpleLinearRegression',
       slope: 1,
-      intercept: 1
+      intercept: 1,
     });
     expect(regression.slope).toBe(1);
     expect(regression.intercept).toBe(1);

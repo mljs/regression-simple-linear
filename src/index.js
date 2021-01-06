@@ -1,6 +1,6 @@
 import BaseRegression, {
   checkArrayLength,
-  maybeToPrecision
+  maybeToPrecision,
 } from 'ml-regression-base';
 
 export default class SimpleLinearRegression extends BaseRegression {
@@ -20,7 +20,7 @@ export default class SimpleLinearRegression extends BaseRegression {
     return {
       name: 'simpleLinearRegression',
       slope: this.slope,
-      intercept: this.intercept
+      intercept: this.intercept,
     };
   }
 
