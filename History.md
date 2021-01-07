@@ -1,3 +1,10 @@
+### [2.0.3](https://github.com/mljs/regression-simple-linear/compare/v2.0.2...v2.0.3) (2021-01-07)
+
+
+### Bug Fixes
+
+* update typescript definition ([#3](https://github.com/mljs/regression-simple-linear/issues/3)) ([72e5f61](https://github.com/mljs/regression-simple-linear/commit/72e5f6148a8b4bdaf378272b724a05d65b01763c))
+
 ## [2.0.2](https://github.com/mljs/regression-simple-linear/compare/v2.0.1...v2.0.2) (2019-06-19)
 
 
