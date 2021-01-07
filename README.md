@@ -1,7 +1,7 @@
 # regression-simple-linear
 
   [![NPM version][npm-image]][npm-url]
-  [![build status][travis-image]][travis-url]
+  [![build status][ci-image]][ci-url]
   [![npm download][download-image]][download-url]
 
 Simple Linear Regression.
@@ -44,7 +44,7 @@ loaded.predict(5) // 9
 
 [npm-image]: https://img.shields.io/npm/v/ml-regression-simple-linear.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-regression-simple-linear
-[travis-image]: https://img.shields.io/travis/mljs/regression-simple-linear/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/mljs/regression-simple-linear
+[ci-image]: https://github.com/mljs/regression-simple-linear/workflows/Node.js%20CI/badge.svg?branch=master
+[ci-url]: https://github.com/mljs/regression-simple-linear/actions?query=workflow%3A%22Node.js+CI%22
 [download-image]: https://img.shields.io/npm/dm/ml-regression-simple-linear.svg?style=flat-square
 [download-url]: https://npmjs.org/package/ml-regression-simple-linear
