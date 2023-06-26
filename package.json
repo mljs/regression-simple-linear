@@ -9,7 +9,6 @@
   "files": [
     "lib",
     "lib-esm",
-    "regression-simple-linear.d.ts",
     "src"
   ],
   "scripts": {
