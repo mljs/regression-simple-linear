@@ -7,7 +7,9 @@ describe('Simple Linear Regression', () => {
 
     const regression = new SLR(inputs, outputs);
 
+    // @ts-expect-error coefficients possibly undefined
     expect(regression.slope).toBe(regression.coefficients[1]);
+    // @ts-expect-error coefficients[1] possibly undefined
     expect(regression.intercept).toBe(regression.coefficients[0]);
 
     expect(regression.slope).toBeCloseTo(-0.264706, 1e-5);

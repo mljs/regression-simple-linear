@@ -2,25 +2,30 @@
   "name": "ml-regression-simple-linear",
   "version": "2.0.3",
   "description": "Simple Linear Regression",
-  "main": "lib/index.js",
-  "module": "src/index.js",
-  "types": "regression-simple-linear.d.ts",
+  "main": "./lib/index.js",
+  "module": "./lib-esm/index.js",
+  "types": "./lib/index.d.ts",
   "sideEffects": false,
   "files": [
-    "regression-simple-linear.d.ts",
     "lib",
+    "lib-esm",
+    "regression-simple-linear.d.ts",
     "src"
   ],
   "scripts": {
-    "compile": "rollup -c",
+    "check-types": "tsc --noEmit",
+    "clean": "rimraf lib lib-esm",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
-    "prepack": "npm run compile",
+    "prepack": "npm run tsc",
     "prettier": "prettier --check src",
     "prettier-write": "prettier --write src",
-    "test": "npm run test-coverage && npm run eslint && npm run prettier",
+    "test": "npm run test-coverage && npm run eslint && npm run prettier && npm run check-types",
     "test-only": "jest",
-    "test-coverage": "jest --coverage"
+    "test-coverage": "jest --coverage",
+    "tsc": "npm run clean && npm run tsc-cjs && npm run tsc-esm",
+    "tsc-cjs": "tsc --project tsconfig.cjs.json",
+    "tsc-esm": "tsc --project tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
@@ -34,12 +39,15 @@
   },
   "homepage": "https://github.com/mljs/regression-simple-linear#readme",
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@types/jest": "^29.5.2",
     "eslint": "^8.10.0",
-    "eslint-config-cheminfo": "^7.2.2",
+    "eslint-config-cheminfo-typescript": "^11.3.1",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
-    "rollup": "^2.69.0"
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.3"
   },
   "dependencies": {
     "ml-regression-base": "^2.1.6"
