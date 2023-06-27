@@ -3,16 +3,25 @@ import BaseRegression, {
   maybeToPrecision,
 } from 'ml-regression-base';
 
+type JsonType = ReturnType<SimpleLinearRegression['toJSON']>;
+
 export default class SimpleLinearRegression extends BaseRegression {
-  constructor(x, y) {
+  slope!: number;
+  intercept!: number;
+  coefficients!: number[];
+
+  constructor(x: true, y: JsonType);
+  constructor(x: number[], y: number[]);
+  constructor(x: number[] | true, y: number[] | JsonType) {
     super();
     if (x === true) {
-      this.slope = y.slope;
-      this.intercept = y.intercept;
-      this.coefficients = [y.intercept, y.slope];
+      const yObj = y as JsonType;
+      this.slope = yObj.slope;
+      this.intercept = yObj.intercept;
+      this.coefficients = [yObj.intercept, yObj.slope];
     } else {
-      checkArrayLength(x, y);
-      regress(this, x, y);
+      checkArrayLength(x, y as number[]);
+      regress(this, x, y as number[]);
     }
   }
 
@@ -24,15 +33,15 @@ export default class SimpleLinearRegression extends BaseRegression {
     };
   }
 
-  _predict(x) {
+  _predict(x: number): number {
     return this.slope * x + this.intercept;
   }
 
-  computeX(y) {
+  computeX(y: number): number {
     return (y - this.intercept) / this.slope;
   }
 
-  toString(precision) {
+  toString(precision?: number): string {
     let result = 'f(x) = ';
     if (this.slope !== 0) {
       const xFactor = maybeToPrecision(this.slope, precision);
@@ -48,11 +57,11 @@ export default class SimpleLinearRegression extends BaseRegression {
     return result;
   }
 
-  toLaTeX(precision) {
+  toLaTeX(precision?: number): string {
     return this.toString(precision);
   }
 
-  static load(json) {
+  static load(json: JsonType): SimpleLinearRegression {
     if (json.name !== 'simpleLinearRegression') {
       throw new TypeError('not a SLR model');
     }
@@ -60,7 +69,7 @@ export default class SimpleLinearRegression extends BaseRegression {
   }
 }
 
-function regress(slr, x, y) {
+function regress(slr: SimpleLinearRegression, x: number[], y: number[]): void {
   const n = x.length;
   let xSum = 0;
   let ySum = 0;
