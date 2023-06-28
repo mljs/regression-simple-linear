@@ -8,7 +8,9 @@ type JsonType = ReturnType<SimpleLinearRegression['toJSON']>;
 /**
  * Class representing simple linear regression.
  * The regression uses OLS to calculate intercept and slope.
- */
+ * @inheritDoc BaseRetgression
+*/
+
 export default class SimpleLinearRegression extends BaseRegression {
   slope!: number;
   intercept!: number;
