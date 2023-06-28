@@ -9,7 +9,7 @@ type JsonType = ReturnType<SimpleLinearRegression['toJSON']>;
  * Class representing simple linear regression.
  * The regression uses OLS to calculate intercept and slope.
  * @inheritDoc BaseRetgression
-*/
+ */
 
 export default class SimpleLinearRegression extends BaseRegression {
   slope!: number;
@@ -37,7 +37,7 @@ export default class SimpleLinearRegression extends BaseRegression {
 
   /**
    * Get the parameters and model name in JSON format
-   * @returns 
+   * @returns
    */
   toJSON() {
     return {
@@ -62,7 +62,7 @@ export default class SimpleLinearRegression extends BaseRegression {
   /**
    * Strings the linear function in the form 'f(x) = ax + b'
    * @param precision - number of significant figures.
-   * @returns 
+   * @returns
    */
   toString(precision?: number): string {
     let result = 'f(x) = ';
@@ -80,18 +80,18 @@ export default class SimpleLinearRegression extends BaseRegression {
     return result;
   }
   /**
-    * Strings the linear function in the form 'f(x) = ax + b'
-    * @param precision - number of significant figures.
-    * @returns 
-    */
+   * Strings the linear function in the form 'f(x) = ax + b'
+   * @param precision - number of significant figures.
+   * @returns
+   */
   toLaTeX(precision?: number): string {
     return this.toString(precision);
   }
 
   /**
    * Class instance from a JSON Object.
-   * @param json 
-   * @returns 
+   * @param json
+   * @returns
    */
   static load(json: JsonType): SimpleLinearRegression {
     if (json.name !== 'simpleLinearRegression') {
@@ -101,7 +101,6 @@ export default class SimpleLinearRegression extends BaseRegression {
     return new SimpleLinearRegression(true, json);
   }
 }
-
 
 function regress(slr: SimpleLinearRegression, x: number[], y: number[]): void {
   const n = x.length;
