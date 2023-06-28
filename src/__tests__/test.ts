@@ -119,7 +119,7 @@ describe('Simple Linear Regression', () => {
   });
 
   it('wrong model', () => {
-    //@ts-expect-error types not fully compatible yet
+    //@ts-expect-error wrong input type
     expect(() => SLR.load({})).toThrow(/^not a SLR model$/);
   });
 });
