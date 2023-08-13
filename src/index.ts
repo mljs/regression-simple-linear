@@ -1,3 +1,4 @@
+import type { NumberArray } from 'cheminfo-types';
 import BaseRegression, {
   checkArrayLength,
   maybeToPrecision,
@@ -9,17 +10,16 @@ type JsonType = ReturnType<SimpleLinearRegression['toJSON']>;
  * Class representing simple linear regression.
  * The regression uses OLS to calculate intercept and slope.
  */
-
 export default class SimpleLinearRegression extends BaseRegression {
-  slope!: number;
-  intercept!: number;
-  coefficients!: number[];
+  slope: number;
+  intercept: number;
+  coefficients: number[];
 
   /**
-   * @param x - independent variable
-   * @param y - dependent variable
+   * @param x - explanatory variable
+   * @param y - response variable
    */
-  constructor(x: number[], y: number[]) {
+  constructor(x: NumberArray, y: NumberArray) {
     super();
     // @ts-expect-error internal use of the constructor, from `this.load`
     if (x === true) {
@@ -30,7 +30,10 @@ export default class SimpleLinearRegression extends BaseRegression {
       this.coefficients = [yObj.intercept, yObj.slope];
     } else {
       checkArrayLength(x, y);
-      regress(this, x, y);
+      const result = regress(x, y);
+      this.slope = result.slope;
+      this.intercept = result.intercept;
+      this.coefficients = [result.intercept, result.slope];
     }
   }
 
@@ -51,7 +54,7 @@ export default class SimpleLinearRegression extends BaseRegression {
   }
   /**
    * Finds x for the given y value.
-   * @param y - dependent variable value
+   * @param y - response variable value
    * @returns - x value
    */
   computeX(y: number): number {
@@ -101,7 +104,14 @@ export default class SimpleLinearRegression extends BaseRegression {
   }
 }
 
-function regress(slr: SimpleLinearRegression, x: number[], y: number[]): void {
+/**
+ * Private function.
+ * It determines the parameters (slope, intercept) of the line that best fit the `x,y` vector-data (simple linear regression).
+ * @param x - explanatory variable
+ * @param y - response variable
+ * @returns - slope and intercept of the best fit line
+ */
+function regress(x: NumberArray, y: NumberArray) {
   const n = x.length;
   let xSum = 0;
   let ySum = 0;
@@ -117,7 +127,10 @@ function regress(slr: SimpleLinearRegression, x: number[], y: number[]): void {
   }
 
   const numerator = n * xY - xSum * ySum;
-  slr.slope = numerator / (n * xSquared - xSum * xSum);
-  slr.intercept = (1 / n) * ySum - slr.slope * (1 / n) * xSum;
-  slr.coefficients = [slr.intercept, slr.slope];
+
+  const slope = numerator / (n * xSquared - xSum * xSum);
+  return {
+    slope,
+    intercept: (1 / n) * ySum - slope * (1 / n) * xSum,
+  };
 }
