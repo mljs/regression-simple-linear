@@ -1,3 +1,5 @@
+import { expect, describe, it } from 'vitest';
+
 import SLR from '..';
 
 describe('Simple Linear Regression', () => {
