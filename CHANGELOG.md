@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/mljs/regression-simple-linear/compare/v2.0.3...v2.0.4) (2023-08-15)
+
+
+### Bug Fixes
+
+* update `ml-regression-base` to v3 ([236d574](https://github.com/mljs/regression-simple-linear/commit/236d574927ee40eab233b83aee383cf1bb7c404d))
+
 ### [2.0.3](https://github.com/mljs/regression-simple-linear/compare/v2.0.2...v2.0.3) (2021-01-07)
 
 
@@ -56,6 +63,3 @@
 ### Features
 
 * implement simple linear regression ([3af9b7d](https://github.com/mljs/regression-simple-linear/commit/3af9b7d))
-
-
-
