@@ -105,7 +105,7 @@ export default class SimpleLinearRegression extends BaseRegression {
 }
 
 /**
- * Private function.
+ * Internal  function.
  * It determines the parameters (slope, intercept) of the line that best fit the `x,y` vector-data (simple linear regression).
  * @param x - explanatory variable
  * @param y - response variable
