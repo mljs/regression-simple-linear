@@ -45,7 +45,7 @@ loaded.predict(5); // 9
 
 [npm-image]: https://img.shields.io/npm/v/ml-regression-simple-linear.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-regression-simple-linear
-[ci-image]: https://github.com/mljs/regression-simple-linear/workflows/Node.js%20CI/badge.svg?branch=master
+[ci-image]: https://github.com/mljs/regression-simple-linear/workflows/Node.js%20CI/badge.svg?branch=main
 [ci-url]: https://github.com/mljs/regression-simple-linear/actions?query=workflow%3A%22Node.js+CI%22
 [download-image]: https://img.shields.io/npm/dm/ml-regression-simple-linear.svg?style=flat-square
 [download-url]: https://npmjs.org/package/ml-regression-simple-linear
