@@ -14,7 +14,7 @@ Simple Linear Regression.
 ## Usage
 
 ```js
-import SimpleLinearRegression from 'ml-regression-simple-linear';
+import { SimpleLinearRegression } from 'ml-regression-simple-linear';
 
 const x = [0.5, 1, 1.5, 2, 2.5];
 const y = [0, 1, 2, 3, 4];
