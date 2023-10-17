@@ -23,7 +23,8 @@
     "test-only": "vitest --coverage --run",
     "tsc": "npm run clean && npm run tsc-cjs && npm run tsc-esm",
     "tsc-cjs": "tsc --project tsconfig.cjs.json",
-    "tsc-esm": "tsc --project tsconfig.esm.json"
+    "tsc-esm": "tsc --project tsconfig.esm.json",
+    "demo": "vite --open"
   },
   "repository": {
     "type": "git",
@@ -41,12 +42,16 @@
   },
   "homepage": "https://github.com/mljs/regression-simple-linear#readme",
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.1.0",
     "@vitest/coverage-v8": "^0.34.1",
     "eslint": "^8.47.0",
     "eslint-config-cheminfo-typescript": "^12.0.4",
+    "ml-regression-polynomial": "^3.0.0",
     "prettier": "^3.0.1",
+    "react-plot": "^1.4.2",
     "rimraf": "^5.0.1",
     "typescript": "^5.1.6",
+    "vite": "^4.4.11",
     "vitest": "^0.34.1"
   },
   "dependencies": {
