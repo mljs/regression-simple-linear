@@ -1,5 +1,6 @@
 import type { NumberArray } from 'cheminfo-types';
-import BaseRegression, {
+import {
+  BaseRegression,
   checkArrayLength,
   maybeToPrecision,
 } from 'ml-regression-base';
