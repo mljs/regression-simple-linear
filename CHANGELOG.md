@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/mljs/regression-simple-linear/compare/v3.0.0...v3.0.1) (2024-05-16)
+
+
+### Bug Fixes
+
+* update dependencies and remove default export in dependencies ([60c79cb](https://github.com/mljs/regression-simple-linear/commit/60c79cbc74cd1cc76d9d3c38aca535a69be8c194))
+
 ## [3.0.0](https://github.com/mljs/regression-simple-linear/compare/v2.0.4...v3.0.0) (2023-09-22)
 
 
