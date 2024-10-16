@@ -41,16 +41,16 @@
   },
   "homepage": "https://github.com/mljs/regression-simple-linear#readme",
   "devDependencies": {
-    "@vitest/coverage-v8": "^1.6.0",
-    "eslint": "^8.57.0",
-    "eslint-config-cheminfo-typescript": "^12.4.0",
-    "prettier": "^3.0.1",
-    "rimraf": "^5.0.7",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "@vitest/coverage-v8": "^2.1.3",
+    "eslint": "^9.12.0",
+    "eslint-config-cheminfo-typescript": "^16.0.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
   },
   "dependencies": {
-    "cheminfo-types": "^1.7.3",
+    "cheminfo-types": "^1.8.0",
     "ml-regression-base": "^4.0.0"
   }
 }
